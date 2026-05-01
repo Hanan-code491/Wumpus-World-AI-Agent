@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/init",
+      "dest": "backend/main.py"
+    },
+    {
+      "src": "/state",
+      "dest": "backend/main.py"
+    },
+    {
+      "src": "/move",
+      "dest": "backend/main.py"
+    },
+    {
+      "src": "/percepts",
+      "dest": "backend/main.py"
+    },
+    {
+      "src": "/infer",
+      "dest": "backend/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1"
+    }
+  ]
+}
