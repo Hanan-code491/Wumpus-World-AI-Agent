@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.dirname(__file__))
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -5,7 +9,6 @@ from pydantic import BaseModel
 from typing import Dict, Any, Optional
 from world import World
 from agent import WumpusAgent
-import os
 
 app = FastAPI()
 
